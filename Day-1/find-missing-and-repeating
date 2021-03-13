@@ -1,0 +1,21 @@
+
+class Solve {
+    int[] findTwoElement(int arr[], int n) {
+     
+        long actSum = (n*(n+1))/2;
+        long actSumSq = (n*(n+1)*(2*n+1))/6; 
+        
+        for(int i=0;i<n;i++){
+            actSum -= arr[i];
+            actSumSq -= arr[i]*arr[i];
+        }
+        
+        
+        long xplusY = (actSumSq)/( actSum);
+        
+        int x =(int) (actSum + xplusY)/2;
+        int y =(int) xplusY-x;
+        return new int[]{y,x};
+    }
+}
+///
